@@ -321,7 +321,7 @@ namespace LINQSession1
             //       name= p.ProductName,
             //       oldPrice= p.UnitPrice,
             //       newPrice= p.UnitPrice-( p.UnitPrice *0.1M),
-                   
+
             //    });
             ////query syntex
             //discountedProducts = from p in ListGenerator.ProductList
@@ -333,15 +333,58 @@ namespace LINQSession1
             //                         oldPrice = p.UnitPrice,
             //                         newPrice = p.UnitPrice - (p.UnitPrice * 0.1M),
             //                     };
-            
+
             //foreach (var item in discountedProducts)
             //    {
             //    Console.WriteLine(item);
             //}
 
             #endregion
-            
-            
+
+
+            #endregion
+
+            #region Elment Operator 
+            //immediate Execution, valid witht the fluent syntex only
+
+            //first()
+            //var firstProduct = ListGenerator.ProductList.First();
+            //Console.WriteLine(firstProduct);
+            ////last()
+            //var lastProduct = ListGenerator.ProductList.Last();
+            //Console.WriteLine(lastProduct);
+
+            //var Result = ListGenerator.ProductList.FirstOrDefault();
+            //var Result = ListGenerator.ProductList.LastOrDefault();
+
+            //var Result = ListGenerator.ProductList.FirstOrDefault(p=>p.UnitsInStock==0);
+
+            //==============================================================
+
+            //ElementAt() | ElementAtOrDefault()
+            //var Result = ListGenerator.ProductList.ElementAt(100);
+            // var Result = ListGenerator.ProductList.ElementAtOrDefault(100);
+
+            //single() | singleOrDefault()  (self_study)
+            //var Result = ListGenerator.ProductList.Single(p => p.ProductID == 1);
+            //var Result = ListGenerator.ProductList.SingleOrDefault(p => p.ProductID == 1);
+
+            //query syntex
+            //var Result = (from p in ListGenerator.ProductList
+            //              where p.UnitsInStock == 0
+            //              select new
+            //              {
+            //                  id = p.ProductID,
+            //                  name = p.ProductName,
+            //                  Price = p.UnitPrice,
+            //                  stock = p.UnitsInStock,
+
+            //              }).FirstOrDefault();
+                            
+
+            //Console.WriteLine(Result); 
+
+
             #endregion
         }
     }
