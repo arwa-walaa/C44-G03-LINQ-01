@@ -191,16 +191,67 @@ namespace LINQSession1
 
             //fluent syntex
             //indexd where
-            var outOfStockProducts = ListGenerator.ProductList.Where((p,I) => I<10 && p.UnitsInStock == 0);
+            // var outOfStockProducts = ListGenerator.ProductList.Where((p,I) => I<10 && p.UnitsInStock == 0);
 
-           foreach (var item in outOfStockProducts)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in outOfStockProducts)
+            // {
+            //     Console.WriteLine(item);
+            // }
             #endregion
 
             #endregion
 
+            #region Ordring Operator 
+            #region get products Ordered by Price ASC
+
+            ////fluent syntex
+            //var productsOrderedByPrice = ListGenerator.ProductList.OrderBy(p => p.UnitPrice);
+            ////query syntex
+            //productsOrderedByPrice= from p in ListGenerator.ProductList
+            //                      orderby p.UnitPrice 
+            //                      select p;
+
+            //foreach (var item in productsOrderedByPrice)
+            //    {
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            #endregion
+
+            #region get products Ordered by Price DESC
+
+            ////fluent syntex
+            //var productsOrderedByPrice = ListGenerator.ProductList.OrderByDescending(p => p.UnitPrice);
+            ////query syntex
+            //productsOrderedByPrice = from p in ListGenerator.ProductList
+            //                         orderby p.UnitPrice descending
+            //                         select p;
+
+            //foreach (var item in productsOrderedByPrice)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            #endregion
+            #endregion
+            #region get product ordered by price ASC and number of items in stock
+            //fluent syntex
+            //var productsOrderedByPrice = ListGenerator.ProductList.OrderBy(p => p.UnitPrice).ThenBy(p=> p.UnitsInStock);
+            ////query syntex
+            //productsOrderedByPrice = from p in ListGenerator.ProductList
+            //                         orderby p.UnitPrice, p.UnitsInStock
+            //                         select p;
+
+            //foreach (var item in productsOrderedByPrice)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
 
         }
     }
