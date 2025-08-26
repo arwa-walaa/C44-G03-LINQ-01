@@ -41,10 +41,34 @@
             #endregion
 
             #region Extension Methods
-            int number = 12345;
-            //Console.WriteLine( IntExtenstion.Reverse(number));
-            int y= number.Reverse();
-            Console.WriteLine(y);
+            //int number = 12345;
+            ////Console.WriteLine( IntExtenstion.Reverse(number));
+            //int y= number.Reverse();
+            //Console.WriteLine(y);
+            #endregion
+
+            #region Anonymous Type
+
+            //Employee employee = new Employee() { id = 1, name = "John", salary = 50000 };
+            //object emp1 = new { id = 1, name = "John", salary = 50000 };
+           
+            var emp1 = new { id = 1, Name = "John", salary = 50000 };
+            Console.WriteLine(emp1.GetType().Name);
+
+            var emp2 = new { id = emp1.id, Name = emp1.Name, salary = 60000 };
+            Console.WriteLine(emp2.GetType().Name);
+            var  emp3= new { Id = 10, Name = "Arwa", Salary = 70000 };
+
+            Console.WriteLine(emp3.GetType().Name);
+
+           var emp4= new { Id = 20, Name = "Sara", Salary = 80000 ,Age=25};
+            Console.WriteLine(emp4.GetType().Name);
+
+            Console.WriteLine(emp1);
+            Console.WriteLine(emp2);
+            Console.WriteLine(emp3);
+            Console.WriteLine(emp4);
+
             #endregion
         }
     }
