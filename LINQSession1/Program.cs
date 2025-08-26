@@ -27,7 +27,7 @@
 
             //dynamic z;
             //dynamic t = null;
-            
+
             //Console.WriteLine(data);
 
 
@@ -38,6 +38,13 @@
             #endregion
 
 
+            #endregion
+
+            #region Extension Methods
+            int number = 12345;
+            //Console.WriteLine( IntExtenstion.Reverse(number));
+            int y= number.Reverse();
+            Console.WriteLine(y);
             #endregion
         }
     }
