@@ -84,7 +84,6 @@
 
             #region LINQ Syntex
 
-            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             #region Fluent Syntex
             //1. call Linq operator as satatic method
@@ -114,6 +113,33 @@
             //{
             //    Console.WriteLine(item);
             //}
+            #endregion
+
+            #endregion
+
+            #region LINQ Execution Ways
+            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            #region Deferred Execution
+            //var OddNumbesr = Numbers.Where(n => n % 2 != 0);
+            // Numbers.AddRange(new List<int>() { 11, 12, 13, 14, 15 });
+            //foreach (var item in OddNumbesr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Immediate Execution
+            var OddNumbesr = Numbers.Where(n => n % 2 != 0).ToList();
+            Numbers.AddRange(new List<int>() { 11, 12, 13, 14, 15 });
+            foreach (var item in OddNumbesr)
+            {
+                Console.WriteLine(item);
+            }
+
+            //casting ,Aggregate Operator,Elemnts Operators
+
             #endregion
 
             #endregion
