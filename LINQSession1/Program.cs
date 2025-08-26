@@ -1,4 +1,5 @@
 ﻿using LINQSession1.Data;
+using System.Xml.Linq;
 
 namespace LINQSession1
 {
@@ -253,6 +254,95 @@ namespace LINQSession1
 
             #endregion
 
+
+            #region Transformation Operators
+            #region select product name
+
+            ////fluent syntex
+            //var productNames = ListGenerator.ProductList.Select(p => p.ProductName);
+            ////query syntex
+            //productNames = from p in ListGenerator.ProductList
+            //               select p.ProductName;
+            //foreach (var item in productNames)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region select customer name
+
+            ////fluent syntex
+            //var custometNames = ListGenerator.CustomerList.Select(p => p.CustomerName);
+            ////query syntex
+            //custometNames = from p in ListGenerator.CustomerList
+            //               select p.CustomerName;
+            //foreach (var item in custometNames)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region select Customer Orders
+
+
+            ////fluent syntex
+            //var customerOrders = ListGenerator.CustomerList.SelectMany(c => c.Orders);
+
+            ////query syntex
+            //customerOrders = from c in ListGenerator.CustomerList
+            //                 from o in c.Orders
+            //                 select o;
+            //foreach (var item in customerOrders)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+            #region get product is and product name
+            //var productIdAndNames = ListGenerator.ProductList.Select(p => new { ProductID=p.ProductID,ProductName= p.ProductName });
+            ////query syntex
+            //productIdAndNames = from p in ListGenerator.ProductList
+            //                    select new { ProductID=p.ProductID, ProductName=p.ProductName };
+            //foreach (var item in productIdAndNames)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region get product in stock and apply 10% discount
+
+            //var discountedProducts = ListGenerator.ProductList
+            //    .Where(p => p.UnitsInStock > 0)
+            //    .Select(p => new
+            //    {
+            //       id= p.ProductID,
+            //       name= p.ProductName,
+            //       oldPrice= p.UnitPrice,
+            //       newPrice= p.UnitPrice-( p.UnitPrice *0.1M),
+                   
+            //    });
+            ////query syntex
+            //discountedProducts = from p in ListGenerator.ProductList
+            //                     where p.UnitsInStock > 0
+            //                     select new
+            //                     {
+            //                         id = p.ProductID,
+            //                         name = p.ProductName,
+            //                         oldPrice = p.UnitPrice,
+            //                         newPrice = p.UnitPrice - (p.UnitPrice * 0.1M),
+            //                     };
+            
+            //foreach (var item in discountedProducts)
+            //    {
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+            
+            
+            #endregion
         }
     }
 }
