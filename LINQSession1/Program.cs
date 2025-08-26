@@ -72,14 +72,53 @@
             #endregion
 
             #region What is  LINQ
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //List<int> OddNumbesr=  Numbers.Where(n => n % 2 != 0).ToList();
+            //foreach (var item in OddNumbesr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+
+            #region LINQ Syntex
+
             List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            List<int> OddNumbesr=  Numbers.Where(n => n % 2 != 0).ToList();
-            foreach (var item in OddNumbesr)
-            {
-                Console.WriteLine(item);
-            }
+            #region Fluent Syntex
+            //1. call Linq operator as satatic method
+            //Enumerable
+            //var OddNumbesr = Enumerable.Where(Numbers, n => n % 2 != 0);
+
+            // foreach (var item in OddNumbesr)
+            // {
+            //     Console.WriteLine(item);
+            // }
+
+            //2.call Linq operator as Extention method
+            //var OddNumbesr = Numbers.Where(n => n % 2 != 0);
+            //foreach (var item in OddNumbesr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             #endregion
+
+            #region Query Syntex
+            //sql like only
+            //var OddNumbesr = from n in Numbers
+            //                 where n % 2 != 0
+            //                 select n;
+            //foreach (var item in OddNumbesr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #endregion
+
+
         }
     }
 }
