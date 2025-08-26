@@ -1,4 +1,6 @@
-﻿namespace LINQSession1
+﻿using LINQSession1.Data;
+
+namespace LINQSession1
 {
     internal class Program
     {
@@ -131,16 +133,23 @@
             #endregion
 
             #region Immediate Execution
-            var OddNumbesr = Numbers.Where(n => n % 2 != 0).ToList();
-            Numbers.AddRange(new List<int>() { 11, 12, 13, 14, 15 });
-            foreach (var item in OddNumbesr)
-            {
-                Console.WriteLine(item);
-            }
+            //var OddNumbesr = Numbers.Where(n => n % 2 != 0).ToList();
+            //Numbers.AddRange(new List<int>() { 11, 12, 13, 14, 15 });
+            //foreach (var item in OddNumbesr)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             //casting ,Aggregate Operator,Elemnts Operators
 
             #endregion
+
+            #endregion
+
+            #region Data Setup
+            Console.WriteLine(ListGenerator.ProductList[0]);
+            Console.WriteLine(ListGenerator.CustomerList[0]);
+
 
             #endregion
 
