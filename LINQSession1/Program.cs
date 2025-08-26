@@ -147,9 +147,57 @@ namespace LINQSession1
             #endregion
 
             #region Data Setup
-            Console.WriteLine(ListGenerator.ProductList[0]);
-            Console.WriteLine(ListGenerator.CustomerList[0]);
+            //Console.WriteLine(ListGenerator.ProductList[0]);
+            //Console.WriteLine(ListGenerator.CustomerList[0]);
 
+
+            #endregion
+
+            #region Filteration Operator
+            //where operator 
+            //deferred execution
+            #region Get Elment out of stock
+            //fluent syntex
+
+            //var outOfStockProducts = ListGenerator.ProductList.Where(p => p.UnitsInStock == 0);
+            //query syntex
+
+            //outOfStockProducts = from p in ListGenerator.ProductList
+            //                          where p.UnitsInStock == 0
+            //                          select p;
+            //foreach (var item in outOfStockProducts)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Get product in stock and in category "Meat"
+
+            ////fluent syntex
+            //var inStockMeatProducts = ListGenerator.ProductList.Where(p => p.UnitsInStock > 0 && p.Category == "Meat/Poultry");
+
+            ////query syntex
+            //inStockMeatProducts = from p in ListGenerator.ProductList
+            //                      where p.UnitsInStock > 0 && p.Category == "Meat/Poultry"
+            //                      select p;
+            //foreach (var item in inStockMeatProducts)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region Get from first 10 product ,products are out of stock
+
+            //fluent syntex
+            //indexd where
+            var outOfStockProducts = ListGenerator.ProductList.Where((p,I) => I<10 && p.UnitsInStock == 0);
+
+           foreach (var item in outOfStockProducts)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
 
             #endregion
 
