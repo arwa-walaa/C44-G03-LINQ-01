@@ -380,12 +380,36 @@ namespace LINQSession1
             //                  stock = p.UnitsInStock,
 
             //              }).FirstOrDefault();
-                            
+
 
             //Console.WriteLine(Result); 
 
 
             #endregion
+
+            #region Aggregate operator
+            //count
+            //var Result = ListGenerator.ProductList.Count();
+            //var Result = ListGenerator.ProductList.Count(p=>p.UnitsInStock==0);
+            //min , max
+
+            //var Result = ListGenerator.ProductList.Min();
+            //var Result = ListGenerator.ProductList.Max(p=>p.UnitPrice);
+
+            //var Result = (from p in ListGenerator.ProductList
+            //             select p.UnitPrice).Min();
+
+            //sum , average
+            //var Result = ListGenerator.ProductList.Sum(p => p.UnitPrice);
+            //var Result = ListGenerator.ProductList.Average(p => p.UnitPrice);
+
+            //concat
+            //string[] arr1 = { "Hello", "World" ,"Hi"};
+            //var Result = arr1.Aggregate((S1, S2) => $"{S1} {S2}");
+            //Console.WriteLine(Result);
+
+            #endregion
+
         }
     }
 }
