@@ -74,8 +74,9 @@ namespace Assignmet
 	{
 		public static List<Product> ProductsList { get; set; }
 		public static List<Customer> CustomersList { get; set; }
+        public static string[] DictionaryWords { get; set; }
 
-		static ListGenerator()
+        static ListGenerator()
 		{
 			ProductsList = new List<Product>()
 			{
@@ -257,6 +258,16 @@ namespace Assignmet
 										  Total = (decimal)o.Element("total")
 									  }).ToArray()
 							 }).ToList();
-		}
+
+            string filePath = "dictionary_english.txt";
+            if (File.Exists(filePath))
+            {
+                DictionaryWords = File.ReadAllLines(filePath);
+            }
+            else
+            {
+                DictionaryWords = Array.Empty<string>();
+            }
+        }
 	}
 }
