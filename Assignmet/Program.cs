@@ -1,4 +1,7 @@
-﻿namespace Assignmet
+﻿using System.Runtime.Intrinsics.Arm;
+using System.Threading;
+
+namespace Assignmet
 {
     internal class Program
     {
@@ -138,10 +141,110 @@
 
             #region Get the average length of the words in dictionary_english.txt (Read dictionary_english.txt into Array of String First).
 
-            double averageLength = ListGenerator.DictionaryWords.Average(w => w.Length);
-            Console.WriteLine(averageLength);
+            //double averageLength = ListGenerator.DictionaryWords.Average(w => w.Length);
+            //Console.WriteLine(averageLength);
 
             #endregion
+
+            #endregion
+
+            #region LINQ - Ordering Operators
+
+            #region Sort a list of products by name
+
+            //var Result = ListGenerator.ProductsList.OrderBy(p => p.ProductName);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Uses a custom comparer to do a case-insensitive sort of the words in an array.
+
+            //string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var Result = Arr.OrderBy(s => s, StringComparer.OrdinalIgnoreCase);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region Sort a list of products by units in stock from highest to lowest.
+
+            //var Result = ListGenerator.ProductsList.OrderByDescending(p => p.UnitsInStock);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Sort a list of digits, first by length of their name, and then alphabetically by the name itself.
+
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var Result = Arr.OrderBy(s => s.Length).ThenBy(s => s);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region Sort first by-word length and then by a case-insensitive sort of the words in an array.
+
+            //string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var Result = Arr.OrderBy(s => s.Length).ThenBy(s => s, StringComparer.OrdinalIgnoreCase);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
+            #region Sort a list of products, first by category, and then by unit price, from highest to lowest.
+
+            //var Result = ListGenerator.ProductsList
+            //    .OrderBy(p => p.Category)
+            //    .ThenByDescending(p => p.UnitPrice);
+
+
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+
+            #region Sort first by-word length and then by a case-insensitive descending sort of the words in an array.
+
+            //string[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var Result = Arr.OrderBy(s => s.Length).ThenByDescending(s => s, StringComparer.OrdinalIgnoreCase);
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
+            #endregion
+
+            #region Create a list of all digits in the array whose second letter is 'i' that is reversed from the order in the original array.
+           
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var Result = Arr.Where(s => s.Length > 1 && s[1] == 'i').Reverse();
+            //foreach (var item in Result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+            #endregion
+
             #endregion
         }
     }
